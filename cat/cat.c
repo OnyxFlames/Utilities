@@ -8,6 +8,12 @@
 #include <stdio.h>
 #include <string.h>
 
+
+void print_help(const char* prog_name)
+{
+    printf("Usage: %s <file> <args>\nArguments:\n%s\n", prog_name, "-l  -- show line numbers");
+}
+
 char line_numbers = 0;
 
 int main(int argc, char* argv[])
@@ -19,6 +25,11 @@ int main(int argc, char* argv[])
             if(strcmp(argv[i], "-l") == 0)
             {
                 line_numbers = 1;
+            }
+            if (strcmp(argv[i], "--help") == 0)
+            {
+                print_help(argv[0]);
+                return 1;
             }
         }
     }
