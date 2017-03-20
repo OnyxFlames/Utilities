@@ -57,6 +57,8 @@ int main(int argc, char* argv[])
             }
             else
             {
+                // due to the way of checking newlines, the first will be ignored.
+                // This if statement will output the first line ONLY if line_numbers == 1, and it's the first line
                 if (line_numbers && line_num == 1)
                     printf("%d:\t", line_num++);
                 putc(c, stdout);
